@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Entertainment = () => (
+export const EntertainmentNav = () => (
   <div>
     Entertainment
   </div>

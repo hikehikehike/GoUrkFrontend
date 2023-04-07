@@ -1,14 +1,10 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-console */
 /* eslint-disable max-len */
-/* eslint import/no-cycle: [2, { maxDepth: 1 }] */
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Categories } from './Categories';
-// import { NavCategoryBox } from './componentNavCity/NavCategory.styled';
-// import { NavCategory } from './componentNavCity/NavCategory';
-// import { Driveway } from './CityPages/Driveway';
-// import { Hotels } from './CityPages/Hotels';
-// import { Restaurants } from './CityPages/Restaurants';
-// import { Entertainment } from './CityPages/Entertainment';
 
 export const City = () => {
   const { city } = useParams();
@@ -19,25 +15,31 @@ export const City = () => {
       <h1>{city}</h1>
       <p>Description from backend</p>
       <Categories city={city} />
-      {/* <nav className="nav__category">
-        <NavCategoryBox className="navbar__category-box"> */}
-      {/* <NavCategory to="../" element={<City />}>
-        Home
- </NavCategory> }
-          {/* <NavCategory to={`../${city}/driveaway`} element={<Driveway />}>
-            Driveaway
-          </NavCategory>
-          <NavCategory to="../hotels" element={<Hotels />}>
-            Hotels
-          </NavCategory>
-          <NavCategory to="../restoraunts" element={<Restaurants />}>
-            Restaurants
-          </NavCategory>
-          <NavCategory to="../entertainment" element={<Entertainment />}>
-            Entertainment
-          </NavCategory>
-        </NavCategoryBox> */}
-      {/* </nav> */}
     </div>
   );
 };
+
+// const getCategory = (currentCategory) => {
+//   setCategory(currentCategory);
+// };
+// const getSection = () => {
+//   switch (section) {
+//     case 'home':
+//       setCategory('home');
+//       break;
+//     case 'driveway':
+//       setCategory('driveway');
+//       break;
+//     case 'hotels':
+//       setCategory('hotels');
+//       break;
+//     case 'restaurants':
+//       setCategory('restaurants');
+//       break;
+//     case 'entertainment':
+//       setCategory('entertainment');
+//       break;
+//     default:
+//       setCategory('home');
+//   }
+// };

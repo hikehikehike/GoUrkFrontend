@@ -11,7 +11,7 @@ import { AccountNav } from './AccountNav';
 import { NavBarBox } from './NavBar.styled';
 
 export const NavBar = ({ onLoginClick }) => {
-  const [isHasAccount, setIsHasAccount] = useState(false);
+  const [isHasAccount, setIsHasAccount] = useState(true);
 
   return (
     <nav
