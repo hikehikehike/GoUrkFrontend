@@ -5,11 +5,11 @@
 import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from 'styled-components';
 import { theme } from './utils/theme';
 import { Container } from './Container.styled';
 import { NavBar } from './components/componentNavBar/NavBar';
-import { MainMap } from './components/MainMap';
+import { Main } from './components/MainPage/Main';
 import { City } from './components/City';
 import { AccountSet } from './components/AccountSet';
 import { HotelsSection } from './components/componentCitySections/HotelsSection';
@@ -21,11 +21,11 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <NavBar />
+        {/* <NavBar /> */}
         <div className="main">
           <Routes>
             <Route path="/">
-              <Route path="/" element={<MainMap />} />
+              <Route path="/" element={<Main />} />
               <Route path="/:city">
                 <Route index element={<City />} />
                 <Route path="home" element={<City />} />

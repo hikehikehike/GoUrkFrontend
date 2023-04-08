@@ -1,10 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { ReactComponent as Saved } from '../Icons/Heart.svg';
+
+const SavedSvg = styled(Saved)`
+height: 32px;
+width: 32px;
+display: block;
+`;
 
 export const SavedNav = () => (
-  <h1>Saved</h1>
+  <SavedSvg />
 );
-
-// ButtonNav.propTypes = {
-//   buttonName: PropTypes.string.isRequired,
-// };

@@ -1,10 +1,13 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { ReactComponent as Account } from '../Icons/Avatar.svg';
+
+const AccountSvg = styled(Account)`
+height: 66px;
+width: 66px;
+display: block;
+`;
 
 export const AccountNav = () => (
-  <h1>Account</h1>
+  <AccountSvg />
 );
-
-// ButtonNav.propTypes = {
-//   buttonName: PropTypes.string.isRequired,
-// };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { LogInButton } from './NavBar.styled';
 import { ModalOverlay } from '../ModalOverlay';
 
 export const ButtonNav = ({ buttonName, isHasAccount }) => {
@@ -25,12 +26,12 @@ export const ButtonNav = ({ buttonName, isHasAccount }) => {
 
   return (
     <>
-      <button
+      <LogInButton
         type="button"
         onClick={toggleModal}
       >
         {buttonName}
-      </button>
+      </LogInButton>
       {isOpenModal && (
         <ModalOverlay
           onCloseModal={toggleModal}

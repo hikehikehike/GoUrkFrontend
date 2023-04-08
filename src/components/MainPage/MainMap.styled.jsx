@@ -1,6 +1,32 @@
 /* eslint-disable no-console */
 import styled from 'styled-components';
 
+export const TextWrapper = styled.div` 
+width: 800px;
+height: 121px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+`;
+
+export const MainText = styled.h1`
+font-weight: 600;
+font-size: 56px;
+line-height: 77.28px;
+`;
+
+export const SubText = styled.p`
+font-weight: 400;
+font-size: 24px;
+line-height: 33.12px;
+color: ${props => props.theme.colors.gray};
+`;
+
+export const MapWrapper = styled.div`
+
+`;
+
 export const RegionList = styled.ul`
   display:flex;
   flex-wrap: wrap;
@@ -8,14 +34,15 @@ export const RegionList = styled.ul`
 `;
 
 export const RegionItem = styled.li`
-position: relative;
+position: sticky;
 transition: all .2s ease-in-out;
   &:hover{
     transform: scale(1.1);
+    color: white;
     z-index: 3;
   }
   &.Lutsk{
-   margin-left:225px;
+   margin-left:104px;
    margin-top:82px;
   }
   &.Rivne {
@@ -37,11 +64,10 @@ transition: all .2s ease-in-out;
   &.Sumy {
   margin-top: 42px;
   margin-left: -32px;
-  margin-right: 346px;
   }
   &.Lviv {
   margin-top: -137px;
-  margin-left: 172px;
+  margin-left: 50px;
   }
   &.Ternopil {
   margin-left: -44px;
@@ -68,7 +94,7 @@ transition: all .2s ease-in-out;
   margin-top: -119px;
   }
     &.Uzhhorod {
-  margin-left: 141px;
+  margin-left: 20px;
   margin-top: -100px;
   }
     &.IvanoFransivsk {
@@ -100,7 +126,7 @@ transition: all .2s ease-in-out;
   margin-left: -74px;
   }
       &.Odesa {
-  margin-left: 488px;
+  margin-left: 366px;
   margin-top: -120px;
   }
       &.Mykolayiv {
