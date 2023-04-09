@@ -1,31 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ButtonContainer } from './SocialMediaEnter.styled';
+import { ButtonContainer, ButtonMedia } from './SocialMediaEnter.styled';
+import { ReactComponent as Twitter } from '../Icons/twitter.svg';
+import { ReactComponent as Google } from '../Icons/google.svg';
+import { ReactComponent as Facebook } from '../Icons/facebook.svg';
 
 const buttons = [
   {
-    name: 'GOOGLE',
+    name: Facebook,
+    link: ' https://twitter.com/i/flow/login',
+  },
+  {
+    name: Twitter,
     link: 'https://accounts.google.com',
   },
   {
-    name: 'FACEBOOK',
+    name: Google,
     link: 'https://www.facebook.com',
-  },
-  {
-    name: 'TWITTER',
-    link: ' https://twitter.com/i/flow/login',
   },
 ];
 
 export const SocialMediaEnter = () => (
   <ButtonContainer>
-    {buttons.map(button => (
-      <button type="button" key={button.name}>
-        <Link to={button.link}>
-          {button.name}
-        </Link>
-      </button>
-    ))}
+    {buttons.map((button) => {
+      const SvgComponent = button.name;
+
+      return (
+        <ButtonMedia type="button" key={button.link}>
+          <Link to={button.link}>
+            <SvgComponent />
+          </Link>
+        </ButtonMedia>
+      );
+    })}
 
   </ButtonContainer>
 );

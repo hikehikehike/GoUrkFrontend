@@ -2,7 +2,10 @@
 import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { FormStyled, FieldStyled, FormContainer } from './SignUpForm.styled';
+import {
+  FormStyled,
+  FieldStyled, FormContainer, FormHeader,
+} from './SignUpForm.styled';
 import { SocialMediaEnter } from './SocialMediaEnter';
 
 export const LoginForm = () => {
@@ -23,7 +26,7 @@ export const LoginForm = () => {
 
   return (
     <FormContainer>
-      <h1>Log In</h1>
+      <FormHeader>Log In</FormHeader>
       <Formik
         validationSchema={schema}
         initialValues={initialValues}

@@ -2,7 +2,11 @@
 import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { FormStyled, FieldStyled, FormContainer } from './SignUpForm.styled';
+import { FormStyled, FieldStyled, FormContainer,
+  FormHeader, LabelRememberMe, SpanLine, SpanText,
+  SpanWrap, ButtonSubmit, InnerWrapMedia,
+  InnerSpanQuestion, InnerButtonLink,
+  InnerTextWrap } from './SignUpForm.styled';
 import { SocialMediaEnter } from './SocialMediaEnter';
 
 export const SignUpForm = () => {
@@ -25,7 +29,7 @@ export const SignUpForm = () => {
 
   return (
     <FormContainer>
-      <h1>Log In</h1>
+      <FormHeader>Create Account</FormHeader>
       <Formik
         validationSchema={schema}
         initialValues={initialValues}
@@ -63,8 +67,9 @@ export const SignUpForm = () => {
             />
             <ErrorMessage name="password" component="div" />
           </label>
-          <label htmlFor="rememberMe">
+          <LabelRememberMe htmlFor="rememberMe" className="rememberMe">
             <FieldStyled
+              className="rememberMe"
               id="rememberMe"
               type="checkbox"
               name="rememberMe"
@@ -72,14 +77,26 @@ export const SignUpForm = () => {
             {' '}
             Remember me
             <ErrorMessage name="rememberMe" component="div" />
-          </label>
-          <div>
-            <span>Or Log In With</span>
+          </LabelRememberMe>
+          <InnerWrapMedia>
+            <SpanWrap>
+              <SpanLine />
+              <SpanText>Or Log In With</SpanText>
+              <SpanLine />
+            </SpanWrap>
             <SocialMediaEnter />
-            <button type="submit">
+            <ButtonSubmit type="submit">
               Sign Up
-            </button>
-          </div>
+            </ButtonSubmit>
+            <InnerTextWrap>
+              <InnerSpanQuestion>
+                Already have an account?
+              </InnerSpanQuestion>
+              <InnerButtonLink type="button">
+                Log In here
+              </InnerButtonLink>
+            </InnerTextWrap>
+          </InnerWrapMedia>
         </FormStyled>
       </Formik>
     </FormContainer>

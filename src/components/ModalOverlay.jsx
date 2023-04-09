@@ -3,8 +3,7 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { Backdrop, Modal } from './ModalOverlay.styled';
-import { IconClose } from './Icons/Icons';
+import { Backdrop, Modal, CloseSvg } from './ModalOverlay.styled';
 import { SignUpForm } from './forms/SignUpFrom';
 import { LoginForm } from './forms/LoginForm';
 
@@ -20,12 +19,12 @@ export const ModalOverlay = ({ onCloseModal, isHasAccount }) => {
   return (createPortal(
     <Backdrop onClick={handleBackdropClick}>
       <Modal>
-        <button
+        {/* <button
           type="button"
           onClick={onCloseModal}
-        >
-          <IconClose />
-        </button>
+        > */}
+        <CloseSvg onClick={onCloseModal} />
+        {/* </button> */}
         {isHasAccount
           ? (<LoginForm />)
           : (<SignUpForm />)}
