@@ -35,7 +35,7 @@ height: 24px;
 `;
 
 export const FormContainer = styled.div`
-  margin: 56px 120px 41px 120px;
+  margin: 16px 120px 0px 120px;
 `;
 
 export const FormHeader = styled.h2`
@@ -44,6 +44,7 @@ font-weight: 400;
 font-size: 36px;
 line-height: 54px;
 display: block;
+margin-bottom: 16px;
 text-align: center;
 `;
 

@@ -1,20 +1,21 @@
 import React from 'react';
-import classNames from 'classnames';
+// import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { NavLinkStyled } from './NavCategory.styled';
 
 export const NavCategory = ({ to, element }) => (
-  <NavLink
+  <NavLinkStyled
     to={to}
-    className={
-      ({ isActive }) => classNames(
-        'navbar-item', { 'is-light': isActive },
-      )
-    }
+    activeClassName="active"
+    // className={
+    //   ({ isActive }) => classNames(
+    //     { 'is-blue': isActive },
+    //   )
+    // }
   >
     {element}
 
-  </NavLink>
+  </NavLinkStyled>
 );
 
 NavCategory.propTypes = {

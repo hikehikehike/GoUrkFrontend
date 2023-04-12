@@ -5,4 +5,5 @@ export const Container = styled.div`
     padding-left: 15px;
     padding-right: 15px;
     margin: auto;
+    background-color: ${props => props.theme.colors.white};
 `;

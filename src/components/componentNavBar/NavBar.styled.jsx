@@ -6,7 +6,7 @@ display: flex;
 justify-content: space-between;
 align-items: start;
 height: 103px;
-margin-bottom: 65px;
+padding-top: 25px;
 `;
 
 export const LogoWrapper = styled.div`
