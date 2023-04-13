@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const TextWrapper = styled.div` 
-width: 800px;
+width: 810px;
 height: 121px;
 margin: 0 auto;
 display: flex;
@@ -24,7 +24,6 @@ color: ${props => props.theme.colors.gray};
 `;
 
 export const MapWrapper = styled.div`
-
 `;
 
 export const RegionList = styled.ul`
@@ -66,28 +65,28 @@ transition: all .2s ease-in-out;
   margin-left: -32px;
   }
   &.Lviv {
-  margin-top: -137px;
-  margin-left: 50px;
+  margin-top: -139px;
+  margin-left: 52px;
   }
   &.Ternopil {
   margin-left: -44px;
-  margin-top: -104px;
+  margin-top: -106px;
   }
   &.Kmelnytskiy {
-  margin-top: -132px;
+  margin-top: -134px;
   margin-left: -15px;
   }
   &.Vinnytsia {
   margin-left: -33px;
-  margin-top: -68px;
+  margin-top: -70px;
   }
   &.Cherkasy {
   margin-left: -29px;
-  margin-top: -102px;
+  margin-top: -104px;
   }
   &.Poltava {
   margin-left: -43px;
-  margin-top: -128px;
+  margin-top: -130px;
   }
   &.Kharkiv {
   margin-left: -64px;
@@ -95,15 +94,15 @@ transition: all .2s ease-in-out;
   }
     &.Uzhhorod {
   margin-left: 20px;
-  margin-top: -100px;
+  margin-top: -104px;
   }
     &.IvanoFransivsk {
-  margin-top: -140px;
-  margin-left: -65px;
+  margin-top: -143px;
+  margin-left: -64px;
   }
     &.Chernivtsi {
-  margin-top: -66px;
-  margin-left: -43px;
+  margin-top: -69px;
+  margin-left: -46px;
   }
     &.Kropyvnytskyi {
   margin-top: -120px;
@@ -127,18 +126,18 @@ transition: all .2s ease-in-out;
   }
       &.Odesa {
   margin-left: 366px;
-  margin-top: -120px;
+  margin-top: -122px;
   }
       &.Mykolayiv {
-  margin-top: -120px;
+  margin-top: -122px;
   margin-left: -64px;
   }
       &.Kherson {
   margin-left: -324px;
-  margin-top: -64px;
+  margin-top: -66px;
   }
       &.Zaporizhia {
-  margin-top: -110px;
+  margin-top: -113px;
   margin-left: 55px;
   }
 `;

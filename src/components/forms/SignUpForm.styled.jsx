@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Form, Field } from 'formik';
+import { BtnStyled } from '../../utils/buttonStyled';
 
 export const FormStyled = styled(Form)`
   display: flex;
@@ -14,7 +15,6 @@ align-items: center;
 width: 150px;
 margin-left: -10px;
 margin-bottom: 40px;
-font-family: MacPaw Fixel;
 font-size: 16px;
 font-weight: 400;
 line-height: 22px;
@@ -54,7 +54,6 @@ border: 2px solid ${props => props.theme.colors.gray}
 `;
 
 export const SpanText = styled.span`
-font-family: MacPaw Fixel;
 font-size: 16px;
 font-weight: 400;
 line-height: 22px;
@@ -69,15 +68,7 @@ align-items: center;
 margin-bottom: 32px;
 `;
 
-export const ButtonSubmit = styled.button`
-width: 213px;
-height: 56px;
-background-color: ${props => props.theme.colors.blue};
-font-size:16px;
-font-weight:600;
-line-height: 22.08px;
-color: ${props => props.theme.colors.white};
-border:none;
+export const ButtonSubmit = styled(BtnStyled)`
 margin-bottom: 20px;
 `;
 
@@ -86,7 +77,6 @@ text-align: center;
 `;
 
 export const InnerSpanQuestion = styled.span`
-font-family: MacPaw Fixel;
 font-size: 16px;
 font-weight: 400;
 line-height: 22px;

@@ -26,14 +26,3 @@ width:32px;
 height:32px;
 display: block;
 `;
-
-export const LogInButton = styled.button`
-width: 213px;
-height: 56px;
-background-color: ${props => props.theme.colors.blue};
-font-size:16px;
-font-weight:600;
-line-height: 22.08px;
-color: ${props => props.theme.colors.white};
-border:none;
-`;

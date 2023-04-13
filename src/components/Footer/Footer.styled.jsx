@@ -21,7 +21,7 @@ align-items: center;
 `;
 
 export const FooterTitle = styled.h3`
-font-family: Inter;
+font-family: 'Inter', sans-serif;;
 font-size: 32px;
 font-weight: 400;
 line-height: 39px;
@@ -51,7 +51,7 @@ margin-top: 15px;
 `;
 
 export const FooterTextItem = styled.li`
-font-family: Inter;
+font-family: 'Inter', sans-serif;
 font-size: 20px;
 font-weight: 400;
 line-height: 24px;
@@ -66,7 +66,7 @@ margin-right: 52px;
 `;
 
 export const FooterTeamSpan = styled.span`
-font-family: Inter;
+font-family: 'Inter', sans-serif;
 font-size: 20px;
 font-weight: 400;
 line-height: 24px;

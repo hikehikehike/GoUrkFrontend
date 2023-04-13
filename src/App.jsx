@@ -10,10 +10,10 @@ import { theme } from './utils/theme';
 import { Main } from './components/MainPage/Main';
 import { City } from './components/City';
 import { AccountSet } from './components/AccountSet';
-import { HotelsSection } from './components/componentCitySections/HotelsSection';
+import { HotelsSection } from './components/componentCitySections/HotelPage/HotelsSection';
 import { RestaurantsSection } from './components/componentCitySections/RestaurantsSection';
 import { EntertainmentSection } from './components/componentCitySections/EntertainmentSection';
-import { DrivewaySection } from './components/componentCitySections/DrivewaySection';
+import { DrivewaySection } from './components/componentCitySections/DrivewayPage/DrivewaySection';
 import { SharedLayout } from './Layout';
 import { HomeSection } from './components/componentCitySections/HomePage/HomeSection';
 

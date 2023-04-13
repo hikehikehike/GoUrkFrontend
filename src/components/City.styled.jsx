@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const CityHeader = styled.h1`
-font-family: MacPaw Fixel;
 font-size: 56px;
 font-weight: 400;
 line-height: 77px;

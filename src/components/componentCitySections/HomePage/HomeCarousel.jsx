@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
@@ -6,7 +7,8 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 
 const GalleryWrapper = styled.div`
 width: 100%;
-heiht:750px;
+height: 800px;
+margin: 0;
 margin-bottom: 108px;
 `;
 
@@ -30,12 +32,12 @@ HomeCarousel.propTypes = {
 HomeCarousel.defaultProps = {
   images: [
     {
-      original: 'https://via.placeholder.com/600/92c952',
-      thumbnail: 'https://via.placeholder.com/600/92c952',
+      original: 'https://media.cnn.com/api/v1/images/stellar/prod/170505152440-lviv-1306387.jpg?q=h_900,w_1600,x_0,y_0/w_1280',
+      thumbnail: 'https://media.cnn.com/api/v1/images/stellar/prod/170505152440-lviv-1306387.jpg?q=h_900,w_1600,x_0,y_0/w_1280',
     },
     {
-      original: 'https://via.placeholder.com/600/771796',
-      thumbnail: 'https://via.placeholder.com/600/771796',
+      original: 'https://expatexplore.com/blog/wp-content/uploads/2019/10/the-southern-bridge-across-the-dnieper-in-kiev.jpg',
+      thumbnail: 'https://expatexplore.com/blog/wp-content/uploads/2019/10/the-southern-bridge-across-the-dnieper-in-kiev.jpg',
     },
     {
       original: 'https://via.placeholder.com/600/24f355',

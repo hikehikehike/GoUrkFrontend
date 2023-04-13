@@ -35,10 +35,13 @@ export const HomeReview = () => (
       <p>John</p>
       <p>Virginia, USA</p>
       <ReviewTitle>Kyiv - the home of my soul</ReviewTitle>
-      <div>
-        <p>5.0</p>
-        <Stars />
-      </div>
+      <ReviewScope>
+        <span>
+          5.0
+          {' '}
+          <Stars />
+        </span>
+      </ReviewScope>
       <ReviewDescription>
         Kyiv is a fantastic destination that I would highly recommend to anyone.
         Its stunning architecture, rich history, bustling nightlife,

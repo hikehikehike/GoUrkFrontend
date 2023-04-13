@@ -13,14 +13,15 @@ export const ReviewBox = styled.div`
 height: 429px;
 width: 450px;
 padding: 32px 59px 32px 59px;
-font-family: MacPaw Fixel;
 font-size: 20px;
 font-weight: 400;
 line-height: 28px;
 letter-spacing: 0em;
 text-align: center;
 color: ${props => props.theme.colors.white};
-background-color: ${props => props.theme.colors.blue};
+background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+url('https://media.istockphoto.com/id/481670380/photo/golden-wheat-field-with-blue-sky-in-background.jpg?s=612x612&w=0&k=20&c=QfYhUN2m6qElOSH5oIF-SzbYJxRQlUjoYC-OL1YPZ_g=');
+background-size: cover;
 `;
 
 export const ProfileAvatar = styled.img`
@@ -59,7 +60,7 @@ margin-bottom: 17px;
 
 export const ReadMoreLink = styled(Link)`
 color: ${props => props.theme.colors.white};
-font-family: Inter;
+font-family: 'Inter', sans-serif;
 font-size: 16px;
 font-weight: 400;
 line-height: 19px;

@@ -6,10 +6,12 @@ import PropTypes from 'prop-types';
 import { Backdrop, Modal, CloseSvg } from './ModalOverlay.styled';
 import { SignUpForm } from './forms/SignUpFrom';
 import { LoginForm } from './forms/LoginForm';
+import { ReviewForm } from './forms/ReviewForm';
 
 const modalRoot = document.querySelector('#modal-root');
 
-export const ModalOverlay = ({ onCloseModal, isHasAccount }) => {
+export const ModalOverlay = ({ onCloseModal, isHasAccount,
+  isLeaveReview }) => {
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       onCloseModal();
@@ -19,13 +21,9 @@ export const ModalOverlay = ({ onCloseModal, isHasAccount }) => {
   return (createPortal(
     <Backdrop onClick={handleBackdropClick}>
       <Modal>
-        {/* <button
-          type="button"
-          onClick={onCloseModal}
-        > */}
         <CloseSvg onClick={onCloseModal} />
-        {/* </button> */}
-        {isHasAccount
+        {isLeaveReview && <ReviewForm />}
+        {isHasAccount && !isLeaveReview
           ? (<LoginForm />)
           : (<SignUpForm />)}
       </Modal>
@@ -36,5 +34,6 @@ export const ModalOverlay = ({ onCloseModal, isHasAccount }) => {
 
 ModalOverlay.propTypes = {
   onCloseModal: PropTypes.func,
-  isHasAccount: PropTypes.bool.isRequired,
+  isHasAccount: PropTypes.bool,
+  isLeaveReview: PropTypes.bool,
 };
