@@ -6,12 +6,6 @@ import { NavLinkStyled } from './NavCategory.styled';
 export const NavCategory = ({ to, element }) => (
   <NavLinkStyled
     to={to}
-    activeClassName="active"
-    // className={
-    //   ({ isActive }) => classNames(
-    //     { 'is-blue': isActive },
-    //   )
-    // }
   >
     {element}
 

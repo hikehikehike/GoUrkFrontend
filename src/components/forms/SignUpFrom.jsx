@@ -61,9 +61,6 @@ export const SignUpForm = () => {
               type="password"
               name="password"
               placeholder="Password"
-              // onChange={handleChange}
-              // onBlur={handleBlur}
-              // value={values.password}
             />
             <ErrorMessage name="password" component="div" />
           </label>

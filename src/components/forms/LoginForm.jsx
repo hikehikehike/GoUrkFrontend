@@ -1,11 +1,11 @@
-/* eslint-disable no-console */
 import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import {
-  FormStyled,
-  FieldStyled, FormContainer, FormHeader,
-} from './SignUpForm.styled';
+import { FormStyled, FieldStyled, FormContainer,
+  FormHeader, LabelRememberMe, SpanLine, SpanText,
+  SpanWrap, ButtonSubmit, InnerWrapMedia,
+  InnerSpanQuestion, InnerButtonLink,
+  InnerTextWrap } from './SignUpForm.styled';
 import { SocialMediaEnter } from './SocialMediaEnter';
 
 export const LoginForm = () => {
@@ -20,13 +20,12 @@ export const LoginForm = () => {
   };
 
   const SubmitHandler = (values, actions) => {
-    console.log(values, actions);
     actions.resetForm();
   };
 
   return (
     <FormContainer>
-      <FormHeader>Log In</FormHeader>
+      <FormHeader>Welcome Back</FormHeader>
       <Formik
         validationSchema={schema}
         initialValues={initialValues}
@@ -49,14 +48,12 @@ export const LoginForm = () => {
               type="password"
               name="password"
               placeholder="Password"
-              // onChange={handleChange}
-              // onBlur={handleBlur}
-              // value={values.password}
             />
             <ErrorMessage name="password" component="div" />
           </label>
-          <label htmlFor="rememberMe">
+          <LabelRememberMe htmlFor="rememberMe" className="rememberMe">
             <FieldStyled
+              className="rememberMe"
               id="rememberMe"
               type="checkbox"
               name="rememberMe"
@@ -64,14 +61,26 @@ export const LoginForm = () => {
             {' '}
             Remember me
             <ErrorMessage name="rememberMe" component="div" />
-          </label>
-          <div>
-            <span>Or Log In With</span>
+          </LabelRememberMe>
+          <InnerWrapMedia>
+            <SpanWrap>
+              <SpanLine />
+              <SpanText>Or Log In With</SpanText>
+              <SpanLine />
+            </SpanWrap>
             <SocialMediaEnter />
-            <button type="submit">
+            <ButtonSubmit type="submit">
               Log In
-            </button>
-          </div>
+            </ButtonSubmit>
+            <InnerTextWrap>
+              <InnerSpanQuestion>
+                Don`t have an account?
+              </InnerSpanQuestion>
+              <InnerButtonLink type="button">
+                Sign Up here
+              </InnerButtonLink>
+            </InnerTextWrap>
+          </InnerWrapMedia>
         </FormStyled>
       </Formik>
     </FormContainer>

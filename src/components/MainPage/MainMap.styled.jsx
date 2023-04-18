@@ -24,6 +24,7 @@ color: ${props => props.theme.colors.gray};
 `;
 
 export const MapWrapper = styled.div`
+width: 1400px;
 `;
 
 export const RegionList = styled.ul`
@@ -126,15 +127,15 @@ transition: all .2s ease-in-out;
   }
       &.Odesa {
   margin-left: 366px;
-  margin-top: -122px;
+  margin-top: -124px;
   }
       &.Mykolayiv {
-  margin-top: -122px;
+  margin-top: -124px;
   margin-left: -64px;
   }
       &.Kherson {
-  margin-left: -324px;
-  margin-top: -66px;
+  margin-left: -326px;
+  margin-top: -68px;
   }
       &.Zaporizhia {
   margin-top: -113px;

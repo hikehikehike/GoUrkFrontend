@@ -13,6 +13,7 @@ import {
   IconsWrapper,
   SphereSvg,
 } from './NavBar.styled';
+import { Container } from '../../Container.styled';
 
 export const NavBar = ({ onLoginClick }) => {
   const [isHasAccount, setIsHasAccount] = useState(false);
@@ -21,27 +22,29 @@ export const NavBar = ({ onLoginClick }) => {
     <nav
       className="navbar"
     >
-      <NavBarBox className="navbar-box">
-        <LogoWrapper>
-          <NavItem to="/" element={<GoUkraineNav />} />
-        </LogoWrapper>
-        <IconsWrapper>
-          <SphereSvg />
-          {isHasAccount
-            ? (
-              <>
-                <NavItem to="/saved" element={<SavedNav />} />
-                <NavItem to="/account" element={<AccountNav />} />
-              </>
-            ) : (
-              <ButtonNav
-                buttonName="Log In"
-                isHasAccount={isHasAccount}
-                onClick={onLoginClick}
-              />
-            )}
-        </IconsWrapper>
-      </NavBarBox>
+      <Container>
+        <NavBarBox className="navbar-box">
+          <LogoWrapper>
+            <NavItem to="/" element={<GoUkraineNav />} />
+          </LogoWrapper>
+          <IconsWrapper>
+            <SphereSvg />
+            {isHasAccount
+              ? (
+                <>
+                  <NavItem to="/saved" element={<SavedNav />} />
+                  <NavItem to="/account" element={<AccountNav />} />
+                </>
+              ) : (
+                <ButtonNav
+                  buttonName="Sign Up"
+                  isHasAccount={isHasAccount}
+                  onClick={onLoginClick}
+                />
+              )}
+          </IconsWrapper>
+        </NavBarBox>
+      </Container>
     </nav>
   );
 };

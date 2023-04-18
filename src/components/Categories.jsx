@@ -23,7 +23,7 @@ export const Categories = ({ city }) => {
     <nav className="nav__category">
       <NavCategoryBox className="navbar__category-box">
         <NavCategory
-          to={`/${selectedCity}`}
+          to={`/${selectedCity}/home`}
           element={<HomeNav />}
         >
           Overview

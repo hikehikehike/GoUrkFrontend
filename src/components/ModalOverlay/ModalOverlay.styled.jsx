@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as Close } from './Icons/Close.svg';
+import { ReactComponent as Close } from '../Icons/Close.svg';
 
 export const CloseSvg = styled(Close)`
 width:40px;
@@ -32,10 +32,10 @@ export const Backdrop = styled.div`
 `;
 export const Modal = styled.div`
 width: 686px;
-height: 778px;
-  background-color: ${props => props.theme.colors.white};
-  border-radius: 5px;
-  // transition: transform 250ms cubic-bezier(0.215, 0.610, 0.355, 1),
-  // opacity 250ms cubic-bezier(0.215, 0.610, 0.355, 1),
-  // background-color 250ms cubic-bezier(0.215, 0.610, 0.355, 1);
+max-height: 778px;
+background-color: ${props => props.theme.colors.white};
+border-radius: 5px;
+transition: transform 250ms cubic-bezier(0.215, 0.610, 0.355, 1),
+opacity: 250ms cubic-bezier(0.215, 0.610, 0.355, 1),
+background-color: 250ms cubic-bezier(0.215, 0.610, 0.355, 1);
 `;

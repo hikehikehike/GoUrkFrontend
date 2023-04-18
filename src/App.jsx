@@ -25,14 +25,15 @@ export const App = () => {
           <Route index element={<Main />} />
           <Route path="/:city" element={<City />}>
             <Route index element={<HomeSection />} />
+            <Route path="home" element={<HomeSection />} />
             <Route path="driveway" element={<DrivewaySection />} />
             <Route path="hotels" element={<HotelsSection />} />
             <Route path="restaurants" element={<RestaurantsSection />} />
             <Route path="entertainment" element={<EntertainmentSection />} />
           </Route>
+          <Route path="/account" element={<AccountSet />} />
+          <Route path="*" element={<Main />} />
         </Route>
-        <Route path="/account" element={<AccountSet />} />
-        <Route path="*" element={<h2>Sorry</h2>} />
       </Routes>
     </ThemeProvider>
   );

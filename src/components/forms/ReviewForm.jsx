@@ -1,74 +1,82 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 import React from 'react';
-import { Formik, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage, Field } from 'formik';
 import * as yup from 'yup';
-import { FormStyled, FieldStyled, FormContainer } from './SignUpForm.styled';
+import { FormStyled, FieldStyled, FormContainer,
+  FormHeader, SpanLine, SpanText,
+  SpanWrap, ButtonSubmit, InnerWrapMedia } from './SignUpForm.styled';
 import { SocialMediaEnter } from './SocialMediaEnter';
+import { SelectField, TextareField } from './ReviewForm.styled';
 
 export const ReviewForm = () => {
   const schema = yup.object().shape({
-    email: yup.string().email().required(),
-    password: yup.string().min(6).max(16).required(),
+    title: yup.string().min(6).max(20).required(),
+    description: yup.string().min(6).max(320).required(),
+    rating: yup.string().required(),
   });
 
   const initialValues = {
-    email: '',
-    password: '',
+    title: '',
+    description: '',
+    rating: '5',
   };
 
   const SubmitHandler = (values, actions) => {
-    console.log(values, actions);
+    console.log(values);
     actions.resetForm();
   };
 
   return (
     <FormContainer>
-      <h1>Log In</h1>
+      <FormHeader>Leave a review</FormHeader>
       <Formik
         validationSchema={schema}
         initialValues={initialValues}
         onSubmit={SubmitHandler}
       >
         <FormStyled>
-          <label htmlFor="email">
+          <SelectField
+            as="select"
+            name="rating"
+            className="select"
+          >
+            <option value="5">Definitely worth a visit</option>
+            <option value="4">Pleasant impressions</option>
+            <option value="3">It could have been better</option>
+            <option value="2">Unsatisfied</option>
+            <option value="1">Don`t recommend</option>
+          </SelectField>
+          <label htmlFor="title">
             <FieldStyled
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Email"
+              id="title"
+              type="text"
+              name="title"
+              placeholder="Title"
             />
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage name="title" component="div" />
           </label>
-
-          <label htmlFor="password">
-            <FieldStyled
-              id="password"
-              type="password"
-              name="password"
-              placeholder="Password"
-              // onChange={handleChange}
-              // onBlur={handleBlur}
-              // value={values.password}
+          <label htmlFor="description">
+            <TextareField
+              id="description"
+              as="textarea"
+              name="description"
+              onChange={e => console.log(e.target.value)}
+              placeholder="Write your impression..."
             />
-            <ErrorMessage name="password" component="div" />
+            <ErrorMessage name="description" component="div" />
           </label>
-          <label htmlFor="rememberMe">
-            <FieldStyled
-              id="rememberMe"
-              type="checkbox"
-              name="rememberMe"
-            />
-            {' '}
-            Remember me
-            <ErrorMessage name="rememberMe" component="div" />
-          </label>
-          <div>
-            <span>Or Log In With</span>
+          <InnerWrapMedia>
+            <SpanWrap>
+              <SpanLine />
+              <SpanText>Share your experience in</SpanText>
+              <SpanLine />
+            </SpanWrap>
             <SocialMediaEnter />
-            <button type="submit">
-              Log In
-            </button>
-          </div>
+            <ButtonSubmit type="submit">
+              Leave a review
+            </ButtonSubmit>
+          </InnerWrapMedia>
         </FormStyled>
       </Formik>
     </FormContainer>

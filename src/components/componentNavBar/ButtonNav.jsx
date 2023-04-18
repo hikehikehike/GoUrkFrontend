@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BtnStyled } from '../../utils/buttonStyled';
-import { ModalOverlay } from '../ModalOverlay';
+import { ModalOverlay } from '../ModalOverlay/ModalOverlay';
+import { LoginForm } from '../forms/LoginForm';
+import { SignUpForm } from '../forms/SignUpFrom';
 
 export const ButtonNav = ({ buttonName, isHasAccount }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -22,7 +24,7 @@ export const ButtonNav = ({ buttonName, isHasAccount }) => {
     return () => {
       window.removeEventListener('keydown', modalHandler);
     };
-  }, []);
+  }, [isOpenModal]);
 
   return (
     <>
@@ -36,7 +38,9 @@ export const ButtonNav = ({ buttonName, isHasAccount }) => {
         <ModalOverlay
           onCloseModal={toggleModal}
           isHasAccount={isHasAccount}
-        />
+        >
+          {isHasAccount ? <LoginForm /> : <SignUpForm />}
+        </ModalOverlay>
       )}
     </>
   );

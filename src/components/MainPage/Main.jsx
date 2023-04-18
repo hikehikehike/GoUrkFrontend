@@ -2,12 +2,15 @@ import React from 'react';
 import { MainWrapper, ContentWrapper } from './Main.styled';
 import { AsideColums } from './AsideColums';
 import { MainMap } from './MainMap';
+import { Container } from '../../Container.styled';
 
 export const Main = () => (
   <MainWrapper>
     <AsideColums />
-    <ContentWrapper>
-      <MainMap />
-    </ContentWrapper>
+    <Container>
+      <ContentWrapper>
+        <MainMap />
+      </ContentWrapper>
+    </Container>
   </MainWrapper>
 );

@@ -10,10 +10,9 @@ export const FormStyled = styled(Form)`
 
 export const LabelRememberMe = styled.label`
 display: flex;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
-width: 150px;
-margin-left: -10px;
+margin-left: -4px;
 margin-bottom: 40px;
 font-size: 16px;
 font-weight: 400;
@@ -101,4 +100,5 @@ export const InnerTextWrap = styled.div`
 display: flex;
 justify-content: center;
 gap: 8px;
+margin-bottom: 58px;
 `;

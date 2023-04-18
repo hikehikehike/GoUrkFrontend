@@ -2,6 +2,8 @@
 //   return client.get<User[]>('/users');
 // };
 
+// import axios from 'axios';
+
 // export const getUserPosts = (userId: number) => {
 //   return client.get<Post[]>(`/posts?userId=${userId}`);
 // };
@@ -17,19 +19,26 @@
 // export const deleteComment = (commentToDelete: number) => {
 //   return client.delete(`/comments/${commentToDelete}`);
 // };
+// export const useData = () => {
 
-// const loadPostComments = async () => {
+// }
+
+// const BASE_URL = 'https://goukraine.onrender.com/api/city';
+
+// axios.defaults.baseURL = BASE_URL;
+// const loadCityInfo = async(city) => {
 //   try {
 //     setIsError(false);
 //     setIsLoading(true);
-//     const commentsFromServer = await getComments(post.id);
+//     const cityInfoFromServer = await axios.get(city);
 
-//     if (commentsFromServer.length) {
-//       setComments(commentsFromServer);
+//     if (cityInfoFromServer) {
+//       console.log(cityInfoFromServer);
 //     }
 //   } catch {
 //     setIsError(true);
-//     Notiflix.Notify.failure("Can`t get comments.Please try again");
+//     // Notiflix.Notify.failure('
+// Can`t get city information.Please try again');
 //   } finally {
 //     setIsLoading(false);
 //   }

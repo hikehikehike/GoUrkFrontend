@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { BtnStyled } from '../../../utils/buttonStyled';
-import { ModalOverlay } from '../../ModalOverlay';
+import { ModalOverlay } from '../../ModalOverlay/ModalOverlay';
+import { ReviewForm } from '../../forms/ReviewForm';
 
 const LeaveReviewBtnStyled = styled(BtnStyled)`
 margin-bottom: 57px;
 `;
 
 export const LeaveReviewBtn = () => {
-  const [isLeaveReview, setIsLeaveReview] = useState(true);
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   const toggleModal = () => {
@@ -34,17 +34,17 @@ export const LeaveReviewBtn = () => {
     <>
       <LeaveReviewBtnStyled
         type="button"
-        onClick={() => setIsLeaveReview(true)}
-        isLeaveReview={isLeaveReview}
+        onClick={() => toggleModal()}
+
       >
         Leave a review
       </LeaveReviewBtnStyled>
       {isOpenModal && (
       <ModalOverlay
         onCloseModal={toggleModal}
-        isLeaveReview={isLeaveReview}
-        closeReviewForm={() => setIsLeaveReview(false)}
-      />
+      >
+        <ReviewForm />
+      </ModalOverlay>
       )}
     </>
   );
