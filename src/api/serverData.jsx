@@ -1,8 +1,4 @@
-// export const getUsers = () => {
-//   return client.get<User[]>('/users');
-// };
-
-// import axios from 'axios';
+import axios from 'axios';
 
 // export const getUserPosts = (userId: number) => {
 //   return client.get<Post[]>(`/posts?userId=${userId}`);
@@ -23,9 +19,9 @@
 
 // }
 
-// const BASE_URL = 'https://goukraine.onrender.com/api/city';
+const BASE_URL = 'https://goukraine.onrender.com/api/';
 
-// axios.defaults.baseURL = BASE_URL;
+axios.defaults.baseURL = BASE_URL;
 // const loadCityInfo = async(city) => {
 //   try {
 //     setIsError(false);

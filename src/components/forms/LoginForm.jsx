@@ -1,6 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-alert */
+/* eslint-disable no-console */
 import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import axios from 'axios';
 import { FormStyled, FieldStyled, FormContainer,
   FormHeader, LabelRememberMe, SpanLine, SpanText,
   SpanWrap, ButtonSubmit, InnerWrapMedia,
@@ -19,8 +23,19 @@ export const LoginForm = () => {
     password: '',
   };
 
-  const SubmitHandler = (values, actions) => {
-    actions.resetForm();
+  const SubmitHandler = async(values, actions) => {
+    try {
+      const response = await axios.post('/api/login', { values });
+      const { token } = response.data;
+
+      if (token) {
+        localStorage.setItem('token', token);
+        actions.resetForm();
+        alert('Login successful!');
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

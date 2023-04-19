@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-alert */
 /* eslint-disable no-console */
-import React from 'react';
+import React, { Navigate, useState } from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import axios from 'axios';
 import { FormStyled, FieldStyled, FormContainer,
   FormHeader, LabelRememberMe, SpanLine, SpanText,
   SpanWrap, ButtonSubmit, InnerWrapMedia,
@@ -10,6 +13,8 @@ import { FormStyled, FieldStyled, FormContainer,
 import { SocialMediaEnter } from './SocialMediaEnter';
 
 export const SignUpForm = () => {
+  const [isSignUpSuccess, setIsSignUpSuccess] = useState(false);
+
   const schema = yup.object().shape({
     name: yup.string().required(),
     email: yup.string().email().required(),
@@ -22,10 +27,25 @@ export const SignUpForm = () => {
     password: '',
   };
 
-  const SubmitHandler = (values, actions) => {
-    console.log(values, actions);
-    actions.resetForm();
+  const SubmitHandler = async(values, actions) => {
+    try {
+      const response = await axios.post('/register', { values });
+      const { token } = response.data;
+
+      if (token) {
+        localStorage.setItem('token', token);
+        setIsSignUpSuccess(true);
+        actions.resetForm();
+        alert('Registration successful!');
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  if (isSignUpSuccess) {
+    return <Navigate to="/account" replace />;
+  }
 
   return (
     <FormContainer>

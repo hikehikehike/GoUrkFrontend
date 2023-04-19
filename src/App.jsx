@@ -6,6 +6,9 @@ import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 import { ThemeProvider } from 'styled-components';
+// import express from 'express';
+// import jwt from 'jsonwebtoken';
+// import registerRouter from 'express-register-routes';
 import { theme } from './utils/theme';
 import { Main } from './components/MainPage/Main';
 import { City } from './components/City';
@@ -38,3 +41,6 @@ export const App = () => {
     </ThemeProvider>
   );
 };
+
+// App.use(express.json());
+// App.use('/api/register', registerRouter);
