@@ -16,12 +16,10 @@ import { HomeTitle, HomeDescription, ReviewSection } from './HomeSection.styled'
 export const HomeSection = ({ city }) => {
   const { city: cityParam } = useParams();
   const selectedCity = city || cityParam;
-  const { pathname } = useLocation();
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  console.log(selectedCity, 'selected city');
   useEffect(() => {
     const BASE_URL = 'https://goukraine.onrender.com/api/city';
 

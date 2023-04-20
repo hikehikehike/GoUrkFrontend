@@ -6,6 +6,7 @@ const SavedSvg = styled(Saved)`
 height: 32px;
 width: 32px;
 display: block;
+fill: inherit;
 `;
 
 export const SavedNav = () => (

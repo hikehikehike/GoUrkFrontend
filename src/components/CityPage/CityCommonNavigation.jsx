@@ -1,35 +1,29 @@
-/* eslint-disable padding-line-between-statements */
-/* eslint-disable import/no-cycle */
-/* eslint-disable no-unused-vars */
-/* eslint-disable arrow-body-style */
-/* eslint-disable react/require-default-props */
-/* eslint-disable no-console */
 import React from 'react';
-// import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
-import { NavCategoryBox } from './componentNavCity/NavCategory.styled';
-import { NavCategory } from './componentNavCity/NavCategory';
-import { HomeNav } from './CityPagesNav/HomeNav';
-import { DrivewayNav } from './CityPagesNav/DrivewayNav';
-import { HotelsNav } from './CityPagesNav/HotelsNav';
-import { RestaurantsNav } from './CityPagesNav/RestaurantsNav';
-import { EntertainmentNav } from './CityPagesNav/EntertainmentNav';
+import { NavCategoryBox } from '../ComponentNavCity/NavLinkCityPages.styled';
+import { NavCategory } from '../ComponentNavCity/NavLinkCityPages';
+import { HomeNav } from '../CityNavigationComponents/HomeNav';
+import { DrivewayNav } from '../CityNavigationComponents/DrivewayNav';
+import { HotelsNav } from '../CityNavigationComponents/HotelsNav';
+import { RestaurantsNav } from '../CityNavigationComponents/RestaurantsNav';
+import { EntertainmentNav } from '../CityNavigationComponents/EntertainmentNav';
 
 export const Categories = ({ city }) => {
   const { city: cityParam } = useParams();
   const selectedCity = city || cityParam;
+
   return (
-    <nav className="nav__category">
-      <NavCategoryBox className="navbar__category-box">
+    <nav>
+      <NavCategoryBox>
         <NavCategory
-          to={`/${selectedCity}/home`}
+          to={`/${selectedCity}/overview`}
           element={<HomeNav />}
         >
           Overview
         </NavCategory>
         <NavCategory
-          to={`/${selectedCity}/driveway`}
+          to={`/${selectedCity}/route`}
           element={<DrivewayNav />}
         >
           Driveaway
@@ -59,4 +53,8 @@ export const Categories = ({ city }) => {
 
 Categories.propTypes = {
   city: PropTypes.string,
+};
+
+Categories.defaultProps = {
+  city: 'Kiev',
 };

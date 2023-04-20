@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { BtnStyled } from '../../../utils/buttonStyled';
 import { ModalOverlay } from '../../ModalOverlay/ModalOverlay';
-import { ReviewForm } from '../../forms/ReviewForm';
+import { ReviewForm } from '../../Forms/ReviewForm';
 
 const LeaveReviewBtnStyled = styled(BtnStyled)`
 margin-bottom: 57px;

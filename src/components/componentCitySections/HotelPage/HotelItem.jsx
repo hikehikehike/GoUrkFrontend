@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -79,7 +80,7 @@ margin-left: 8px;
 export const HotelItem = ({
   name = 'Khreschatyk City Hotel',
   location = 'Great location ',
-  rating = 5.0,
+  rating = '5.0',
   image = 'https://static-new.lhw.com/HotelImages/Final/LW3601/lw3601_28070673_720x450.jpg',
   price = '3,678',
   onClick,
@@ -123,8 +124,8 @@ export const HotelItem = ({
 HotelItem.propTypes = {
   name: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  rating: PropTypes.number.isRequired,
+  rating: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
+  price: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
 };

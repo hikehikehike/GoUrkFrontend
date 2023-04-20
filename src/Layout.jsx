@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import styled from 'styled-components';
 // import { Container } from './Container.styled';
-import { NavBar } from './components/componentNavBar/NavBar';
+import { NavBar } from './components/HeaderNavigationComponents/NavBar';
 
 const CommonBackground = styled.div`
 background-color: ${props => props.theme.colors.white}

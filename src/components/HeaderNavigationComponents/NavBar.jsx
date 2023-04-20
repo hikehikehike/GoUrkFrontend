@@ -2,7 +2,7 @@
 /* eslint-disable react/require-default-props */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { NavItem } from './NavItem';
+import { NavItem } from './NavLinkHeader';
 import { GoUkraineNav } from './GoUkraine';
 import { ButtonNav } from './ButtonNav';
 import { SavedNav } from './SavedNav';
@@ -16,7 +16,7 @@ import {
 import { Container } from '../../Container.styled';
 
 export const NavBar = ({ onLoginClick }) => {
-  const [isHasAccount, setIsHasAccount] = useState(false);
+  const [isHasAccount, setIsHasAccount] = useState(true);
 
   return (
     <nav
@@ -33,7 +33,11 @@ export const NavBar = ({ onLoginClick }) => {
               ? (
                 <>
                   <NavItem to="/saved" element={<SavedNav />} />
-                  <NavItem to="/account" element={<AccountNav />} />
+                  <NavItem
+                    to="/account"
+                    element={<AccountNav />}
+                    className="account"
+                  />
                 </>
               ) : (
                 <ButtonNav

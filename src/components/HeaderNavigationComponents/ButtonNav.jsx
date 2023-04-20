@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BtnStyled } from '../../utils/buttonStyled';
 import { ModalOverlay } from '../ModalOverlay/ModalOverlay';
-import { LoginForm } from '../forms/LoginForm';
-import { SignUpForm } from '../forms/SignUpFrom';
+import { LoginForm } from '../Forms/LoginForm';
+import { SignUpForm } from '../Forms/SignUpFrom';
 
 export const ButtonNav = ({ buttonName, isHasAccount }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);

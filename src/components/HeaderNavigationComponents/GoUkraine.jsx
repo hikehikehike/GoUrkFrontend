@@ -20,6 +20,5 @@ export const GoUkraineNav = () => (
     Go
     <UkraineLogoSvg />
     kraine
-
   </GoUkraineText>
 );

@@ -106,16 +106,16 @@ transition: all .2s ease-in-out;
   margin-left: -46px;
   }
     &.Kropyvnytskyi {
-  margin-top: -120px;
+  margin-top: -121px;
   margin-left: 125px;
   }
     &.Dnipro {
-  margin-top: -111px;
+  margin-top: -112px;
   margin-left: -58px;
   }
     &.Simfiropol {
   margin-left: -164px;
-  margin-top: 52px;
+  margin-top: 49px;
   }
     &.Donetsk {
   margin-top: -116px;

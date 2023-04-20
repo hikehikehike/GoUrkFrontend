@@ -33,5 +33,9 @@ export const HotelList = ({ hotels }) => (
 );
 
 HotelList.propTypes = {
-  hotels: PropTypes.arrayOf(string).isRequired,
+  hotels: PropTypes.arrayOf(string),
+};
+
+HotelList.defaultProps = {
+  hotels: [],
 };
