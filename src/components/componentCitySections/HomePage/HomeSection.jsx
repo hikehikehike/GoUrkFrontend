@@ -3,10 +3,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
-import { useLocation, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import axios from 'axios';
-// import cors from 'cors';
-// import express from 'express';
 import Notiflix from 'notiflix';
 import { HomeCarousel } from './HomeCarousel';
 import { HomeReview } from './HomeReview';
@@ -31,9 +29,14 @@ export const HomeSection = ({ city }) => {
         setIsError(false);
         setIsLoading(true);
         console.log('serverdata fetch');
-        const cityInfoFromServer = await axios.get(cityInLowerCase);
 
-        console.log(cityInfoFromServer);
+        const cityInfoFromServer = await axios.get(cityInLowerCase, {
+          headers: {
+            'Access-Control-Allow-Origin': 'http://localhost:3000',
+            'Access-Control-Allow-Methods': 'GET',
+          },
+        });
+
         if (cityInfoFromServer) {
           console.log(cityInfoFromServer);
         }

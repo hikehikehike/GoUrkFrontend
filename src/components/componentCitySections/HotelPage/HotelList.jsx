@@ -23,11 +23,11 @@ export const HotelList = ({ hotels }) => (
     ))} */}
     <HotelItem
       key="1"
-      name="'Khreschatyk City Hotel'"
-      location="'Great location '"
-      rating=""
+      name="Khreschatyk City Hotel"
+      location="Great location"
+      rating="5.0"
       image="https://static-new.lhw.com/HotelImages/Final/LW3601/lw3601_28070673_720x450.jpg"
-      price=""
+      price="3,678"
     />
   </HotelListStyled>
 );

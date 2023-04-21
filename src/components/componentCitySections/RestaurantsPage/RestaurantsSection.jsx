@@ -1,12 +1,14 @@
 import React from 'react';
 import { RestaurantsFilter } from './RestaurantsFilter';
+import { RestaurantList } from './RestaurantsList';
 
 export const RestaurantsSection = () => (
   <div>
-    <div>filter</div>
-    <RestaurantsFilter />
     <div>
-      <div>card</div>
+      <RestaurantsFilter />
+    </div>
+    <div>
+      <div><RestaurantList /></div>
     </div>
   </div>
 );
