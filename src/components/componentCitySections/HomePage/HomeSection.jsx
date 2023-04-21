@@ -28,7 +28,7 @@ export const HomeSection = ({ city }) => {
       try {
         setIsError(false);
         setIsLoading(true);
-        console.log('serverdata fetch');
+        console.log('serverdata fetch запит');
 
         const cityInfoFromServer = await axios.get(cityInLowerCase, {
           headers: {
