@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const FooterWrapper = styled.div`
+width: 100%;
+`;
+
 export const FooterYellowBlock = styled.div`
 height: 160px;
 width: 100%;

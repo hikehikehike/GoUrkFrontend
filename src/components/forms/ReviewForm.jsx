@@ -11,8 +11,8 @@ import { SelectField, TextareField } from './ReviewForm.styled';
 
 export const ReviewForm = () => {
   const schema = yup.object().shape({
-    title: yup.string().min(6).max(20).required(),
-    description: yup.string().min(6).max(320).required(),
+    title: yup.string().min(6).max(44).required(),
+    description: yup.string().min(6).max(112).required(),
     rating: yup.string().required(),
   });
 

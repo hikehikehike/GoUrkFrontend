@@ -5,81 +5,80 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
-import Notiflix from 'notiflix';
 import { HomeCarousel } from './HomeCarousel';
 import { HomeReview } from './HomeReview';
 import { LeaveReviewBtn } from './LeaveReviewBtn';
-import { HomeTitle, HomeDescription, ReviewSection } from './HomeSection.styled';
+import { HomeTitle, HomeDescription, ReviewSection, ReviewSectionTextWrapper, StyledLink } from './HomeSection.styled';
+import { Loader } from '../../Loader/Loader';
+import { Error } from '../../Loader/Error.jsx/Error';
 
 export const HomeSection = ({ city }) => {
+  const [cityData, setCityData] = useState(null);
   const { city: cityParam } = useParams();
   const selectedCity = city || cityParam;
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
   useEffect(() => {
-    const BASE_URL = 'https://goukraine.onrender.com/api/city';
-
-    axios.defaults.baseURL = BASE_URL;
     const loadCityInfo = async() => {
       const cityInLowerCase = selectedCity.toLowerCase();
 
       try {
         setIsError(false);
-        setIsLoading(true);
-        console.log('serverdata fetch запит');
+        console.log('fetching');
+        const cityInfoFromServer = await axios.get(`https://goukraine.onrender.com/api/city/${cityInLowerCase}`);
 
-        const cityInfoFromServer = await axios.get(cityInLowerCase, {
-          headers: {
-            'Access-Control-Allow-Origin': 'http://localhost:3000',
-            'Access-Control-Allow-Methods': 'GET',
-          },
-        });
-
-        if (cityInfoFromServer) {
-          console.log(cityInfoFromServer);
+        if (cityInfoFromServer.data) {
+          setCityData(cityInfoFromServer.data);
         }
       } catch {
         console.log('serverdata error', console.error());
         setIsError(true);
-        Notiflix.Notify.failure('Can`t get city information.Please try again');
       } finally {
         setIsLoading(false);
+        setIsError(false);
       }
     };
 
     loadCityInfo();
-  // return () => {
-  //   second
-  // }
-  }, [city]);
+
+    return () => {
+      setCityData(null);
+    };
+  }, [selectedCity]);
 
   return (
-    // isLoading
-    //   ? Notiflix.Loading.standard('Loading...')
-    //   :
-    (
+    <>
+      {isError && <Error />}
+      {!cityData && isLoading && <Loader />}
+      {cityData && (
       <div>
         <HomeTitle>
-          The city with golden domes, Kyiv, my heart belongs to you.
+          {cityData.song_line}
         </HomeTitle>
         <HomeDescription>
-          Get ready for the adventure of a lifetime,
-          because Kyiv is the place to be! The capital of Ukraine is a vibrant and thrilling destination
-          that has something for everyone. With a history spanning over a thousand years,
-          this city is bursting with energy and excitement. From the awe-inspiring St.
-          Sophias Cathedral to the underground catacombs of Kyiv-Pechersk Lavra,
-          every corner of Kyiv is full of surprises and wonder. And when the sun goes down,
-          the city truly comes to life with a nightlife scene that will blow your mind.
-          So get ready to eat, drink, dance, and explore your heart out - Kyiv is waiting for you!
+          {cityData.description}
         </HomeDescription>
-        <HomeCarousel />
+        <HomeCarousel images={cityData.image} />
         <ReviewSection>
-          <HomeReview />
+          <ReviewSectionTextWrapper>
+            <p>
+              Your  impressions of
+              {city}
+            </p>
+            <StyledLink
+              to={`https://www.google.com/search?q=${selectedCity}+ukraine+reviews&oq=${selectedCity}+ukraine+reviews`}
+              target="_blank"
+            >
+              View more
+            </StyledLink>
+          </ReviewSectionTextWrapper>
+          <HomeReview reviews={cityData.comment} />
           <LeaveReviewBtn />
         </ReviewSection>
       </div>
-    )
+      )}
+    </>
   );
 };

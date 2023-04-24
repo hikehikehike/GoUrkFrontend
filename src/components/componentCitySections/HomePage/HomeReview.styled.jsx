@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 export const ReviewContainer = styled.div`
 display: flex;
@@ -10,7 +9,7 @@ margin-bottom: 40px;
 `;
 
 export const ReviewBox = styled.div`
-height: 429px;
+min-height: 470px;
 width: 450px;
 padding: 32px 59px 32px 59px;
 font-size: 20px;
@@ -20,7 +19,7 @@ letter-spacing: 0em;
 text-align: center;
 color: ${props => props.theme.colors.white};
 background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-url('https://media.istockphoto.com/id/481670380/photo/golden-wheat-field-with-blue-sky-in-background.jpg?s=612x612&w=0&k=20&c=QfYhUN2m6qElOSH5oIF-SzbYJxRQlUjoYC-OL1YPZ_g=');
+url('https://t3.ftcdn.net/jpg/01/19/18/92/360_F_119189251_kiyixdA3xj8dcCimKuVa4e5DcuslHJPs.jpg');
 background-size: cover;
 `;
 
@@ -58,7 +57,9 @@ line-height: 22px;
 margin-bottom: 17px;
 `;
 
-export const ReadMoreLink = styled(Link)`
+export const ReadMore = styled.button`
+background-color: transparent;
+border: none;
 color: ${props => props.theme.colors.white};
 font-family: 'Inter', sans-serif;
 font-size: 16px;

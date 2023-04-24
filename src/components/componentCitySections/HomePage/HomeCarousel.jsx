@@ -1,29 +1,34 @@
+/* eslint-disable no-console */
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import ImageGallery from 'react-image-gallery';
-import 'react-image-gallery/styles/css/image-gallery.css';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.css';
+import { Image, SwiperStyled } from './HomeCarousel.styled';
 
-const GalleryWrapper = styled.div`
-width: 100%;
-height: 800px;
-margin: 0;
-margin-bottom: 108px;
-`;
+export const HomeCarousel = ({ images }) => {
+  const imagesToRender = images.length < 1 ? HomeCarousel.defaultProps.images : images;
 
-export const HomeCarousel = ({ images }) => (
-  <GalleryWrapper>
-    <ImageGallery
-      items={images}
-      autoPlay={false}
-      showThumbnails={false}
-      showBullets
-      showPlayButton={false}
-    />
-  </GalleryWrapper>
-
-);
+  return (
+    <SwiperStyled
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={50}
+      slidesPerView={1}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={swiper => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      {imagesToRender.map(image => (
+        <SwiperSlide key={image.image}>
+          <Image src={image.image} alt="" />
+        </SwiperSlide>
+      ))}
+    </SwiperStyled>
+  );
+};
 
 HomeCarousel.propTypes = {
   images: PropTypes.arrayOf(PropTypes.shape),
@@ -32,16 +37,16 @@ HomeCarousel.propTypes = {
 HomeCarousel.defaultProps = {
   images: [
     {
-      original: 'https://media.cnn.com/api/v1/images/stellar/prod/170505152440-lviv-1306387.jpg?q=h_900,w_1600,x_0,y_0/w_1280',
-      thumbnail: 'https://media.cnn.com/api/v1/images/stellar/prod/170505152440-lviv-1306387.jpg?q=h_900,w_1600,x_0,y_0/w_1280',
+      image: 'https://ukraine.ua/wp-content/uploads/2020/09/Lviv-market-square.Ruslan-Lytvyn.shutterstock-1536x1024.jpg',
     },
     {
-      original: 'https://expatexplore.com/blog/wp-content/uploads/2019/10/the-southern-bridge-across-the-dnieper-in-kiev.jpg',
-      thumbnail: 'https://expatexplore.com/blog/wp-content/uploads/2019/10/the-southern-bridge-across-the-dnieper-in-kiev.jpg',
+      image: 'https://cdn.turkishairlines.com/m/3ca6c0776a640b70/original/1400_500.jpg',
     },
     {
-      original: 'https://via.placeholder.com/600/24f355',
-      thumbnail: 'https://via.placeholder.com/600/24f355',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Operniy-1.jpg/1200px-Operniy-1.jpg',
+    },
+    {
+      image: 'https://f.rivne.travel/city/190/ro5B6.jpg',
     },
   ],
 };

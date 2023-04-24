@@ -6,14 +6,15 @@ import { ReactComponent as FacebookFooter } from '../Icons/FacebookFooter.svg';
 import { ReactComponent as TwitterFooter } from '../Icons/TwitterFooter.svg';
 import {
   FooterTitle, FooterMediaList, FooterYellowBlock,
-  FooterBlueBlock, FooterTextList, FooterTextItem, FooterTeamSpan,
+  FooterBlueBlock, FooterTextList, FooterTextItem,
+  FooterTeamSpan, FooterWrapper,
 } from './Footer.styled';
 
 const footerText = ['Info', 'Support', 'Contact', 'Terms of Use',
   'Privacy Policy'];
 
 export const Footer = () => (
-  <div>
+  <FooterWrapper>
     <FooterBlueBlock>
       <FooterTitle>GoUkraine</FooterTitle>
       <FooterMediaList>
@@ -55,5 +56,5 @@ export const Footer = () => (
       </FooterTextList>
       <FooterTeamSpan>@ 2023 GoUkraine.team</FooterTeamSpan>
     </FooterYellowBlock>
-  </div>
+  </FooterWrapper>
 );

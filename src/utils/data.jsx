@@ -1,4 +1,8 @@
-// /** @format */
+// import axios from 'axios';
+
+// const BASE_URL = 'https://goukraine.onrender.com/api/city';
+
+// axios.defaults.baseURL = BASE_URL;
 
 // const BASE_URL = "https://mate.academy/students-api";
 
